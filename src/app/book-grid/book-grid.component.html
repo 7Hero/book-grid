@@ -1,0 +1,8 @@
+<app-book-page [content]="currentBook" *ngIf="isOpen" (isClose)="setIsOpen($event)"> </app-book-page>
+
+<div [ngClass]="'grid'">
+  <div *ngFor="let book of books">
+    <app-book-card (addToCart)="setCurrentBook($event)" [book]="book"></app-book-card>
+  </div>
+</div>
+

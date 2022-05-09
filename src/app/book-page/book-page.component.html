@@ -1,0 +1,30 @@
+<div #modal (click)="onClick($event)" class="modal" [ngStyle]="{'position':'fixed','top':0,'left':0,'width':'100%','height':'100vh','background-color':'rgba(0,0,0,0.25)'}">
+  <div class="bookpage-container">
+    <div class='book-cover'>
+      <p>ISBN: {{content.ISBN}}</p>
+      <img alt="{{content.title}}" src="{{content.image}}">
+    </div>
+    <div class="book-details">
+      <div class="header">
+        <p class="title">
+          {{content.title}}
+        </p>
+        <p (click)="isClose.emit(false)">✖</p>
+      </div>
+      <p class="author">
+        {{content.author}}
+      </p>
+      <div class="shop">
+        <p>{{content.price.displayValue | currency: content.price.currency }}</p>
+        <div>
+          <button class="btn stroke">ADD TO CART</button>
+          <button class="btn">BUY NOW</button>
+        </div>
+      </div>
+      <div class="summary">
+        <p>Summary</p>
+        <p>{{content.summary}}</p>
+      </div>
+    </div>
+  </div>
+</div>

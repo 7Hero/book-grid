@@ -1,0 +1,9 @@
+<div (click)="cardClicked()">
+  <div class="image-container">
+    <div class='fill'></div>
+    <img alt="{{book.title}}" [src]="book.image">
+  </div>
+  <p class="title">{{book.title}}</p>
+  <p class="author">{{book.author}}</p>
+  <p class="author">{{book.price.value | currency: book.price.currency}}</p>
+</div>
